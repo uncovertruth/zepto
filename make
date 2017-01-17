@@ -38,7 +38,7 @@ target.dist = ->
 target.build = ->
   cd __dirname
   mkdir '-p', 'dist'
-  modules = (env['MODULES'] || 'zepto event ajax form ie').split(' ')
+  modules = (env['MODULES'] || 'zepto event ajax form ie data selector').split(' ')
   module_files = ( "src/#{module}.js" for module in modules )
   intro = "/* Zepto #{describe_version()} - #{modules.join(' ')} - zeptojs.com/license */\n"
   dist = cat(module_files).replace(/^\/[\/*].*$/mg, '').replace(/\n{3,}/g, "\n\n")
